@@ -28,6 +28,10 @@ yarn-error.log*
 .env*.local
 .env
 
+# update agent
+/logs/
+*.backup.*.json
+
 # vercel
 .vercel
 

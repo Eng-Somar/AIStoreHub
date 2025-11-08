@@ -1,0 +1,170 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-30",
+  "dataSources": {
+    "primary": [
+      {
+        "name": "Product Hunt",
+        "url": "https://www.producthunt.com",
+        "apiUrl": "https://api.producthunt.com/v2/api/graphql",
+        "category": "AI Tools Directory",
+        "trustScore": 9.5,
+        "requiresAuth": true,
+        "features": ["ratings", "reviews", "launches", "popularity"],
+        "updateFrequency": "daily",
+        "notes": "Leading product discovery platform with verified user reviews"
+      },
+      {
+        "name": "Futurepedia",
+        "url": "https://www.futurepedia.io",
+        "category": "AI Tools Directory",
+        "trustScore": 9.0,
+        "requiresAuth": false,
+        "features": ["categorization", "daily_updates", "filtering", "reviews"],
+        "updateFrequency": "daily",
+        "toolCount": "2549+",
+        "notes": "Largest AI tools directory with daily updates, 200K+ community"
+      },
+      {
+        "name": "There's An AI For That",
+        "url": "https://theresanaiforthat.com",
+        "category": "AI Tools Directory",
+        "trustScore": 8.8,
+        "requiresAuth": false,
+        "features": ["natural_language_search", "categorization", "regular_updates"],
+        "updateFrequency": "daily",
+        "notes": "Extensive database with natural language search capabilities"
+      },
+      {
+        "name": "Toolify.ai",
+        "url": "https://www.toolify.ai",
+        "category": "AI Tools Aggregator",
+        "trustScore": 8.5,
+        "requiresAuth": false,
+        "features": ["user_feedback", "categorization", "regular_updates"],
+        "updateFrequency": "weekly",
+        "notes": "Comprehensive aggregator with real-world user feedback"
+      }
+    ],
+    "secondary": [
+      {
+        "name": "AI Launch List",
+        "url": "https://ailaunches.com",
+        "category": "AI Tools Directory",
+        "trustScore": 8.0,
+        "requiresAuth": false,
+        "features": ["directory_aggregation", "categorization"],
+        "updateFrequency": "weekly",
+        "notes": "Aggregates 100+ AI tool directories"
+      },
+      {
+        "name": "GPT Store",
+        "url": "https://chat.openai.com/gpts",
+        "apiUrl": "https://chat.openai.com",
+        "category": "Official Platform",
+        "trustScore": 10.0,
+        "requiresAuth": true,
+        "features": ["official_listings", "verified_tools", "user_ratings"],
+        "updateFrequency": "real-time",
+        "notes": "Official OpenAI GPT marketplace"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com",
+        "apiUrl": "https://api.github.com",
+        "category": "Developer Platform",
+        "trustScore": 9.5,
+        "requiresAuth": true,
+        "features": ["stars", "forks", "activity", "releases"],
+        "updateFrequency": "real-time",
+        "notes": "For open-source AI tools verification and activity tracking"
+      }
+    ],
+    "verification": [
+      {
+        "name": "Google Gemini",
+        "url": "https://ai.google.dev",
+        "apiUrl": "https://generativelanguage.googleapis.com/v1beta",
+        "category": "AI Verification",
+        "trustScore": 9.5,
+        "requiresAuth": true,
+        "features": ["fact_checking", "description_enhancement", "categorization", "trend_analysis"],
+        "usage": "Verify tool information, enhance descriptions, check for outdated data",
+        "notes": "Used for automated verification and content enhancement"
+      }
+    ]
+  },
+  "scrapingRules": {
+    "respectRobotsTxt": true,
+    "userAgent": "AIStoreHub-Bot/1.0 (Educational; +https://github.com/yourusername/AIStoreHub)",
+    "rateLimit": {
+      "requestsPerMinute": 10,
+      "requestsPerHour": 100,
+      "delayBetweenRequests": 3000
+    },
+    "timeout": 30000,
+    "retryAttempts": 3
+  },
+  "dataValidation": {
+    "requiredFields": ["name", "url", "description", "category"],
+    "urlValidation": true,
+    "descriptionMinLength": 20,
+    "descriptionMaxLength": 200,
+    "allowedCategories": [
+      "Artificial Intelligence",
+      "Productivity",
+      "Marketing",
+      "Developer Tools",
+      "Design",
+      "SEO",
+      "Chatbots",
+      "Social Media",
+      "Content Creation",
+      "No Code",
+      "Writing",
+      "Customer Support",
+      "Blogging",
+      "Sales",
+      "Website Builders",
+      "Analytics",
+      "Developer APIs",
+      "Video",
+      "Code Assistant",
+      "Image Generation",
+      "Audio",
+      "Animation",
+      "Logo Generation",
+      "Photo Editing",
+      "Search",
+      "Healthcare",
+      "Travel",
+      "Business",
+      "Education",
+      "Email",
+      "Finance",
+      "Data Analysis",
+      "Automation",
+      "Security"
+    ]
+  },
+  "updateSchedule": {
+    "fullUpdate": "weekly",
+    "incrementalUpdate": "daily",
+    "verificationCheck": "monthly",
+    "deadLinkCheck": "weekly"
+  },
+  "knownOutdatedTools": [
+    {
+      "name": "Replit Ghostwriter",
+      "reason": "Rebranded to Replit AI in 2023",
+      "newName": "Replit AI",
+      "updateRequired": true
+    },
+    {
+      "name": "GitHub Copilot X",
+      "reason": "Merged into GitHub Copilot",
+      "newName": "GitHub Copilot",
+      "updateRequired": true
+    }
+  ]
+}

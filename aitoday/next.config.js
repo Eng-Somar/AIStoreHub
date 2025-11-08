@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Use shorter directory name to avoid Windows MAX_PATH (260 chars) issues
+  distDir: '.n',
+
   images: {
     remotePatterns: [
       {
